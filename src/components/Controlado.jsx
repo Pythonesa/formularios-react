@@ -22,10 +22,10 @@ export default function Controlado() {
 
     function handleOnChange(event) {
         const {name, value, type, checked} = event.target
-        setTodo({
+        setTodo(structuredClone({
             ...todo,
             [name]: type === 'checkbox' ? checked : value
-        })
+        }))
     }
 
     return (
